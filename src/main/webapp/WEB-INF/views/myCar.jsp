@@ -45,17 +45,45 @@
 				</div>
 
 				<div style="float: right; margin-right: -40px; margin-top: 50px;">
-					<button class="btn btn-success btn-lg">结算</button>
+					<button class="btn btn-success btn-lg" id="btn_sub">结算</button>
 				</div>
 			</div>
 		</div>
 		<script type="text/javascript">
+		    var subArray;
+			$("#btn_sub").click(function() {
+				alert("结算成功");
+				var trs=$("tbody tr");
+		
+				trs.each(function(i) {
+					var num=$(this).find("span:eq(1)").text();
+					var id=$(this).find("span:eq(1)").attr("id");
+					subArray[id]=num;
+				});
+		
+				var zongprice=$("#TOTAL").text();
+				$.ajax({
+					url:"${APP_PATH}/addOrder",
+					type:"post",
+					data:"num="+subArray+"&price="+TOTLE,
+						
+				});
+				$.cookie('car', '', { expires: -1 });
+				$("#table_build").empty();
+				$("#TOTAL").remove();
+			})
 			var TOTLE = 0;
 			var ids = [];
 
 			window.onload = function() {
 				$("#nav_mycar").addClass("active");
 				var car = $.cookie('car');
+				var numArray=car.split(",");
+				var length=numArray.length-1;
+				subArray=new Array(length);
+				for(var i=0;i<length;i++){
+					subArray[i]=0;
+				}
 				$
 						.ajax({
 							url : "${APP_PATH}/dealCar",
@@ -228,13 +256,13 @@
 					"click",
 					"#del-btn",
 					function() {
-
+						subArray[$(this).parents("tr").find("td:eq(4)").find("span:eq(1)").attr("id")]=0;
 						var total = parseInt($(this).parents("tr").find(
 								"td:eq(5)").text());
 						TOTLE = TOTLE - total;
 						$("#TOTAL").html("一共" + TOTLE + "元");
 						$(this).parents("tr").empty();
-
+						
 					})
 		</script>
 	</div>

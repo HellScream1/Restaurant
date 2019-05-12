@@ -32,13 +32,14 @@
     <javaClientGenerator type="XMLMAPPER" targetPackage="com.zzu.dao"  targetProject=".\src\main\java">
       <property name="enableSubPackages" value="true" />
     </javaClientGenerator>
-
+  <table tableName="orders" domainObjectName="Orders"></table>
+ 
     <table tableName="dish" domainObjectName="Dish"></table>
     <table tableName="dishkind" domainObjectName="DishKind"></table>
     <table tableName="address" domainObjectName="Address"></table>
     <table tableName="admin" domainObjectName="Admin"></table>
     <table tableName="dish_order" domainObjectName="DishOrder"></table>
-    <table tableName="order" domainObjectName="Order"></table>
+    
     <table tableName="user" domainObjectName="User"></table>
     
 
