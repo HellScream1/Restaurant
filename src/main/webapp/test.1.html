@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>麦乐送</title>
+<link rel="stylesheet" href="./layui/css/layui.css">
+<link href="./layui/css/templatemo_style.css" rel="stylesheet"
+	type="text/css" />
+<script src="js/jquery-3.3.1.js"></script>
+<style>
+.layui-nav .layui-this::after, .layui-nav-bar, .layui-nav-tree .layui-nav-itemed::after
+	{
+	background-color: #22C64E00;
+}
+
+.layui-nav .topbar .layui-nav-item a:hover, .layui-nav .layui-this a {
+	color: #ffc423;
+}
+
+.layui-nav .layui-nav-item .ahome {
+	background: #e81c25;
+}
+
+.layui-layout {
+	margin: 1.875rem auto;
+	min-width: 62.5rem;
+	max-width: 75rem;
+}
+
+.layui-body1 {
+	left: 12.5rem;
+	top: 9.375rem;
+	right: 1.875rem;
+	position: absolute;
+	bottom: 0;
+	z-index: 998;
+	width: auto;
+	box-sizing: border-box;
+}
+</style>
+<body style="background: #F1F1F1;">
+	<!-- class="layui-layout-body" -->
+	<div class="layui-header">
+
+		<div style="text-align: right;">
+			<span class="layui-breadcrumb" lay-separator="|"> <a href="">登录</a>
+				<a href="">追踪订单</a>
+			</span>
+		</div>
+		<div>
+			<ul class="layui-nav layui-bg-black"
+				style="padding: 0; border-radius: 0.625rem;" lay-filter="">
+				<li class="layui-nav-item topbar"><a href="" class="ahome"><img
+						src="img/mcdelivery_logo_zh.jpg" class=" "></a></li>
+				<li class="layui-nav-item topbar layui-this"><a href=""><img
+						src="img/hamburger.png" class="layui-nav-img">浏览菜单</a></li>
+				<li class="layui-nav-item topbar"><a href=""><img
+						src="img/hamburger.png" class="layui-nav-img">我的餐车</a></li>
+				<li class="layui-nav-item topbar"><a href=""><img
+						src="img/myAccount.png" class="layui-nav-img">我的账户</a></li>
+				<li class="layui-nav-item topbar"><a href="javascript:;"><img
+						src="img/telephone.png" class="layui-nav-img">帮助</a>
+					<dl class="layui-nav-child">
+						<!-- 二级菜单 -->
+						<dd>
+							<a href="">网站条款</a>
+						</dd>
+						<dd>
+							<a href="">隐私政策</a>
+						</dd>
+						<dd>
+							<a href="">订餐须知</a>
+						</dd>
+						<dd>
+							<a href="">常见问题</a>
+						</dd>
+						<dd>
+							<a href="">关于30分钟必达</a>
+						</dd>
+						<dd>
+							<a href="">经营公示</a>
+						</dd>
+						<dd>
+							<a href="">安全公示</a>
+						</dd>
+					</dl></li>
+			</ul>
+		</div>
+	</div>
+
+
+	<script src="./layui/layui.js"></script>
+	<script>
+		//JavaScript代码区域
+		layui.use('element', function() {
+			var element = layui.element;
+
+		});
+	</script>
+
+
+
+</body>
+</html>
